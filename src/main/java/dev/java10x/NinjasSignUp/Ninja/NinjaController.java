@@ -1,4 +1,4 @@
-package dev.java10x.NinjasSignUp;
+package dev.java10x.NinjasSignUp.Ninja;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

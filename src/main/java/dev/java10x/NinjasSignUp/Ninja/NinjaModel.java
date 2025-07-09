@@ -1,6 +1,9 @@
-package dev.java10x.NinjasSignUp;
+package dev.java10x.NinjasSignUp.Ninja;
 
+import dev.java10x.NinjasSignUp.Mission.MissionModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //JPA = Java Persistence API
 //@Entity turns a class into a database entity.
@@ -11,9 +14,18 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String email;
+
     private int age;
+
+    //@ManyToOne - A ninja has only one mission at a time, but a mission can have many ninjas.
+    @ManyToOne
+    @JoinColumn(name = "mission_id")
+    private MissionModel mission;
+
 
     public NinjaModel(){
     }
