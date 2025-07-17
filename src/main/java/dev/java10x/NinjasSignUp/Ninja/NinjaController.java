@@ -3,7 +3,7 @@ package dev.java10x.NinjasSignUp.Ninja;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
 
     @GetMapping("/greetings")
@@ -18,26 +18,26 @@ public class NinjaController {
     }
 
     //show all ninjas (READ)
-    @GetMapping("/all")
-    public String showAllNinjas() {
+    @GetMapping("/get")
+    public String getNinjas() {
         return "Showing all Ninjas!";
     }
 
     //show ninjas using id (CREATE)
-    @GetMapping("/allID")
-    public String showAllNinjasID() {
+    @GetMapping("/getID")
+    public String getNinjaByID() {
         return "This is Ninja[ID]!";
     }
 
     //update ninjas (UPDATE)
     @PutMapping("/updateID")
-    public String updateNinjaID() {
+    public String updateNinjaByID() {
         return "Ninja Updated!";
     }
 
     //delete ninjas (DELETE)
     @DeleteMapping("/deleteID")
-    public String deleteNinjaID() {
+    public String deleteNinjaByID() {
         return "Ninja Deleted!";
     }
     
