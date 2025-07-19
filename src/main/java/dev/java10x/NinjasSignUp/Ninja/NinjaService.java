@@ -25,4 +25,9 @@ public class NinjaService {
         return ninjaByID.orElse(null);
     }
 
+    //post - create a new ninja
+    public NinjaModel createNinja(NinjaModel ninja) {
+        return ninjaRepository.save(ninja);
+    }
+
 }
