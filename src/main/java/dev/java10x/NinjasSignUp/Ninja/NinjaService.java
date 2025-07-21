@@ -32,14 +32,24 @@ public class NinjaService {
 
     //delete - delete a ninja
     public String deleteNinjaByID(Long id) {
-        Optional<NinjaModel> ninja = ninjaRepository.findById(id);
 
-        if (ninja.isPresent()){
+        if (ninjaRepository.existsById(id)){
             ninjaRepository.deleteById(id);
             return "Ninja deleted succesfully!";
         }else{
             return "Deletion failed! The Ninja selected doesn't exist in database.";
         }
+    }
+
+    //put - update a ninja
+    public NinjaModel updateNinja(Long id, NinjaModel updatedNinja) {
+
+        if (ninjaRepository.existsById(id)){
+            updatedNinja.setId(id);
+            return ninjaRepository.save(updatedNinja);
+        }
+
+        return null;
     }
 
 }
