@@ -21,26 +21,26 @@ public class NinjaController {
 
     //create ninjas (CREATE)
     @PostMapping("/create")
-    public NinjaModel createNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO createNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.createNinja(ninja);
     }
 
     //show all ninjas (READ)
     @GetMapping("/get")
-    public List<NinjaModel> getNinjas() {
+    public List<NinjaDTO> getNinjas() {
         return ninjaService.getNinjas();
     }
 
     //show ninjas by id (READ)
     @GetMapping("/get/{id}")
-    public NinjaModel getNinjaByID(@PathVariable Long id) {
+    public NinjaDTO getNinjaByID(@PathVariable Long id) {
         return ninjaService.getNinjaByID(id);
     }
 
     //update ninjas (UPDATE)
     @PutMapping("/update/{id}")
-    public NinjaModel updateNinjaByID(@PathVariable Long id, @RequestBody NinjaModel updatedNinja) {
-        return ninjaService.updateNinja(id, updatedNinja);
+    public NinjaDTO updateNinjaByID(@PathVariable Long id, @RequestBody NinjaDTO ninja) {
+        return ninjaService.updateNinja(id, ninja);
     }
 
     //delete ninjas (DELETE)

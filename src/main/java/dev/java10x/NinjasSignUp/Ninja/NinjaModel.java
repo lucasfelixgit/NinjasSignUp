@@ -31,4 +31,9 @@ public class NinjaModel {
     @JoinColumn(name = "mission_id")
     private MissionModel mission;
 
+    //added after the creation of DTO!
+    private String rank;
+
+    private String imgUrl;
+
 }
