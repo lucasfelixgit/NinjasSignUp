@@ -1,7 +1,8 @@
 package dev.java10x.NinjasSignUp.Mission;
 
-import dev.java10x.NinjasSignUp.Ninja.NinjaModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MissionMapper {
 
     public MissionModel map(MissionDTO missionDTO){
