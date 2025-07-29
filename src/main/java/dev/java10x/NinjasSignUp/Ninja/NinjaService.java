@@ -39,14 +39,8 @@ public class NinjaService {
     }
 
     //delete - delete a ninja
-    public String deleteNinjaByID(Long id) {
-
-        if (ninjaRepository.existsById(id)){
-            ninjaRepository.deleteById(id);
-            return "Ninja deleted succesfully!";
-        }else{
-            return "Deletion failed! The Ninja selected doesn't exist in database.";
-        }
+    public void deleteNinjaByID(Long id) {
+        ninjaRepository.deleteById(id);
     }
 
     //put - update a ninja
